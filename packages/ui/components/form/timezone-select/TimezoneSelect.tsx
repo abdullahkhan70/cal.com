@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import type { ITimezoneOption, ITimezone, Props as SelectProps } from "react-timezone-select";
 import BaseSelect, { allTimezones } from "react-timezone-select";
 
@@ -34,6 +34,7 @@ export function TimezoneSelect({
     });
   }, [components]);
 
+
   return (
     <BaseSelect
       className={className}
@@ -44,6 +45,7 @@ export function TimezoneSelect({
         ...allTimezones,
         ...addCitiesToDropdown(cities),
         "America/Asuncion": "Asuncion",
+        "Europe/Berlin": "Arctic",
       }}
       onInputChange={handleInputChange}
       {...props}
